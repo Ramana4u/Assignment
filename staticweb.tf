@@ -4,6 +4,7 @@ region = "us-east-2"
 resource "aws_amplify_app" "simple-static-website" {
   name       = "simple-static-website"
   repository = "https://github.com/Ramana4u/simple-static-website.git"
+  access_token = "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"
 
   # The default build_spec added by the Amplify Console for React.
   build_spec = <<-EOT
@@ -35,11 +36,4 @@ resource "aws_amplify_app" "simple-static-website" {
   environment_variables = {
     ENV = "test"
   }
-}
-resource "aws_amplify_app" "simple-static-website" {
-  name       = "simple-static-website"
-  repository = "https://github.com/Ramana4u/simple-static-website.git"
-
-  # GitHub personal access token
-  access_token = "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"
 }
