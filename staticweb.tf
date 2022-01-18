@@ -36,3 +36,10 @@ resource "aws_amplify_app" "simple-static-website" {
     ENV = "test"
   }
 }
+resource "aws_amplify_app" "simple-static-website" {
+  name       = "simple-static-website"
+  repository = "https://github.com/Ramana4u/simple-static-website.git"
+
+  # GitHub personal access token
+  access_token = "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"
+}
