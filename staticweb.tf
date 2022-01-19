@@ -1,10 +1,13 @@
 provider "aws"{
 region = "us-east-2"
 }
+data "aws_ssm_parameter" "foo" {
+  name = "/github/access_token"
+}
 resource "aws_amplify_app" "simple-static-website" {
   name       = "simple-static-website"
-  repository = "https://github.com/vigneshs123123/static-website-example.git"
-  access_token = "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"
+  repository = "https://github.com/Ramana4u/simple-static-website.git"
+  access_token = data.aws_ssm_parameter.foo.value
 
   # The default build_spec added by the Amplify Console for React.
   build_spec = <<-EOT
